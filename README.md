@@ -80,7 +80,16 @@ Each subject folder inside **Assignments-and-IA** may contain files related to:
 - Lab CA  
 - Viva  
 - Assignments  
-- Compensation Tasks  
+- Compensation Tasks
+
+---
+
+## 📖 First Year Notes  
+
+For **First Year Notes**, please check the below repositories:  
+
+- [Semester 1 (Physics Group) – All Theory Notes and Lab Experiments](https://github.com/RiteshJha912/Notes-Sem1-FY-P)  
+- [Semester 2 (Chemistry Group) – All Theory Notes and Lab Experiments](https://github.com/RiteshJha912/Notes-Sem2-FY-C)  
 
 ---
 
@@ -91,7 +100,5 @@ Drop me a mail at: **ritesh.exe@proton.me**
 
 ##  Support
 If you find this repository useful, please consider giving it a **star ⭐** on GitHub.  
-It helps others discover the repository and keeps the motivation going for further updates!
-
 ---
 
