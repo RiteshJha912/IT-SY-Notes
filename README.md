@@ -98,7 +98,6 @@ Drop me a mail at: **ritesh.exe@proton.me**
 
 ---
 
-##  Support
-If you find this repository useful, please consider giving it a **star ⭐** on GitHub.  
+##  If you find this repository useful, please consider giving it a **star ⭐** on GitHub.  
 ---
 
