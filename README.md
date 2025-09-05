@@ -2,7 +2,7 @@
 
 This repository has been set up to provide **easy access** to the notes, assignments and lab work of **Second Year Engineering (Information Technology Branch)** at **KJ Somaiya College of Engineering**.  
 
-The goal of this repository is to help juniors and peers with **well-structured study materials**, making preparation easier for assignments, labs, internals, and end-semester exams.
+The goal of this repository is to help juniors and peers with **well-structured study materials**, making preparation easier for assignments, labs, internals and end-semester exams.
 
 ---
 
