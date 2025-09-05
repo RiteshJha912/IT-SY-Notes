@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Resume Maker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        .form-section label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-section input,
+        .form-section textarea,
+        .form-section select,
+        .form-section .file-input {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-section input:focus,
+        .form-section textarea:focus,
+        .form-section select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .form-section textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-section button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-section button:hover {
+            background-color: #2980b9;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            margin-right: 15px;
+            font-weight: 400;
+        }
+
+        #resume {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .resume-content {
+            margin-bottom: 25px;
+        }
+
+        .resume-content ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .resume-content li {
+            margin: 8px 0;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            color: #3498db;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .preview-button {
+            background-color: #27ae60;
+            margin-right: 10px;
+        }
+
+        .preview-button:hover {
+            background-color: #219653;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #3498db;
+            margin-bottom: 20px;
+        }
+
+        .file-input {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px dashed #3498db;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .file-input:hover {
+            background-color: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Advanced Resume Maker</h1>
+
+        <form id="resumeForm">
+            <!-- Profile Picture -->
+            <div class="form-section">
+                <h2>Profile Picture</h2>
+                <label for="profilePicture">Upload a professional photo</label>
+                <div class="file-input" onclick="document.getElementById('profilePicture').click()">
+                    Click to upload a profile picture
+                </div>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            </div>
+
+            <!-- Personal Details -->
+            <div class="form-section">
+                <h2>Personal Details</h2>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[\+][0-9]{1,3}[-][0-9]{10}" required>
+                <small>Format: +<CountryCode>-<PhoneNumber></small>
+
+                <label for="linkedin">LinkedIn Profile</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="Enter your LinkedIn profile URL">
+
+                <label for="github">GitHub Profile</label>
+                <input type="url" id="github" name="github" placeholder="Enter your GitHub profile URL">
+            </div>
+
+            <!-- Work Experience -->
+            <div class="form-section">
+                <h2>Work Experience</h2>
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" name="jobTitle" placeholder="Enter your job title">
+
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" placeholder="Enter company name">
+
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate">
+
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate">
+
+                <label for="jobDescription">Job Description</label>
+                <textarea id="jobDescription" name="jobDescription" rows="4" placeholder="Describe your role and responsibilities"></textarea>
+            </div>
+
+            <!-- Education -->
+            <div class="form-section">
+                <h2>Education</h2>
+                <label for="degree">Degree</label>
+                <input type="text" id="degree" name="degree" placeholder="Enter your degree">
+
+                <label for="institution">Institution</label>
+                <input type="text" id="institution" name="institution" placeholder="Enter institution name">
+
+                <label for="graduationDate">Graduation Date</label>
+                <input type="date" id="graduationDate" name="graduationDate">
+            </div>
+
+            <!-- Skills -->
+            <div class="form-section">
+                <h2>Skills</h2>
+                <label for="skills">Technical Skills (Comma separated)</label>
+                <input type="text" id="skills" name="skills" placeholder="e.g., Python, JavaScript, React">
+            </div>
+
+            <!-- Certifications -->
+            <div class="form-section">
+                <h2>Certifications</h2>
+                <label for="certifications">Certifications (Comma separated)</label>
+                <input type="text" id="certifications" name="certifications" placeholder="e.g., AWS Certified, PMP">
+            </div>
+
+            <!-- Languages -->
+            <div class="form-section">
+                <h2>Languages</h2>
+                <label for="languages">Languages (Comma separated)</label>
+                <input type="text" id="languages" name="languages" placeholder="e.g., English, Spanish, French">
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+                <button type="button" class="preview-button" onclick="previewResume()">Preview Resume</button>
+                <button type="submit">Generate Resume</button>
+            </div>
+        </form>
+
+        <!-- Resume Preview -->
+        <div id="resume">
+            <div style="text-align: center;">
+                <img id="resumeProfilePicture" class="profile-picture" src="" alt="Profile Picture" style="display: none;">
+                <h1>Resume of <span id="resumeName"></span></h1>
+            </div>
+
+            <div class="resume-content">
+                <p><strong>Email:</strong> <span id="resumeEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="resumePhone"></span></p>
+                <p><strong>LinkedIn:</strong> <a href="" id="resumeLinkedin" target="_blank"></a></p>
+                <p><strong>GitHub:</strong> <a href="" id="resumeGithub" target="_blank"></a></p>
+            </div>
+
+            <div class="resume-content">
+                <p class="section-title">Work Experience</p>
+                <p><strong><span id="resumeJobTitle"></span></strong> at <span id="resumeCompany"></span></p>
+                <p><strong>Duration:</strong> <span id="resumeStartDate"></span> to <span id="resumeEndDate"></span></p>
+                <p id="resumeJobDescription"></p>
+            </div>
+
+            <div class="resume-content">
+                <p class="section-title">Education</p>
+                <p><strong><span id="resumeDegree"></span></strong> from <span id="resumeInstitution"></span></p>
+                <p><strong>Graduation Date:</strong> <span id="resumeGraduationDate"></span></p>
+            </div>
+
+            <div class="resume-content">
+                <p class="section-title">Skills</p>
+                <ul id="resumeSkills"></ul>
+            </div>
+
+            <div class="resume-content">
+                <p class="section-title">Certifications</p>
+                <ul id="resumeCertifications"></ul>
+            </div>
+
+            <div class="resume-content">
+                <p class="section-title">Languages</p>
+                <ul id="resumeLanguages"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('resumeProfilePicture').src = e.target.result;
+                    document.getElementById('resumeProfilePicture').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function previewResume() {
+            // Get form values
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var linkedin = document.getElementById('linkedin').value;
+            var github = document.getElementById('github').value;
+            var jobTitle = document.getElementById('jobTitle').value;
+            var company = document.getElementById('company').value;
+            var startDate = document.getElementById('startDate').value;
+            var endDate = document.getElementById('endDate').value;
+            var jobDescription = document.getElementById('jobDescription').value;
+            var degree = document.getElementById('degree').value;
+            var institution = document.getElementById('institution').value;
+            var graduationDate = document.getElementById('graduationDate').value;
+            var skills = document.getElementById('skills').value.split(',');
+            var certifications = document.getElementById('certifications').value.split(',');
+            var languages = document.getElementById('languages').value.split(',');
+
+            // Populate resume with input data
+            document.getElementById('resumeName').textContent = fullName;
+            document.getElementById('resumeEmail').textContent = email;
+            document.getElementById('resumePhone').textContent = phone;
+            document.getElementById('resumeLinkedin').textContent = linkedin;
+            document.getElementById('resumeLinkedin').href = linkedin;
+            document.getElementById('resumeGithub').textContent = github;
+            document.getElementById('resumeGithub').href = github;
+            document.getElementById('resumeJobTitle').textContent = jobTitle;
+            document.getElementById('resumeCompany').textContent = company;
+            document.getElementById('resumeStartDate').textContent = startDate;
+            document.getElementById('resumeEndDate').textContent = endDate;
+            document.getElementById('resumeJobDescription').textContent = jobDescription;
+            document.getElementById('resumeDegree').textContent = degree;
+            document.getElementById('resumeInstitution').textContent = institution;
+            document.getElementById('resumeGraduationDate').textContent = graduationDate;
+
+            // Populate skills
+            var skillsList = document.getElementById('resumeSkills');
+            skillsList.innerHTML = '';
+            skills.forEach(function(skill) {
+                var li = document.createElement('li');
+                li.textContent = skill.trim();
+                skillsList.appendChild(li);
+            });
+
+            // Populate certifications
+            var certificationsList = document.getElementById('resumeCertifications');
+            certificationsList.innerHTML = '';
+            certifications.forEach(function(certification) {
+                var li = document.createElement('li');
+                li.textContent = certification.trim();
+                certificationsList.appendChild(li);
+            });
+
+            // Populate languages
+            var languagesList = document.getElementById('resumeLanguages');
+            languagesList.innerHTML = '';
+            languages.forEach(function(language) {
+                var li = document.createElement('li');
+                li.textContent = language.trim();
+                languagesList.appendChild(li);
+            });
+
+            // Show the resume
+            document.getElementById('resume').style.display = 'block';
+        }
+
+        document.getElementById('resumeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            previewResume();
+        });
+    </script>
+</body>
+</html>
