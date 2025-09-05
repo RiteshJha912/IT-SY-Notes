@@ -69,7 +69,7 @@ The repository is organized semester-wise for clarity:
 ```
 
 
-### 📌 Note: Assignments-and-IA
+#### 📌 Note: Assignments-and-IA
 Each subject folder inside **Assignments-and-IA** may contain files related to:
 
 - IA  
@@ -84,7 +84,7 @@ Each subject folder inside **Assignments-and-IA** may contain files related to:
 
 ---
 
-## 📖 First Year Notes  
+## First Year Notes  
 
 For **First Year Notes**, please check the below repositories:  
 
