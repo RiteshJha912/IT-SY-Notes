@@ -1,4 +1,4 @@
-# SY-IT-Notes
+# IT-SY-Notes
 
 This repository has been set up to provide **easy access** to the notes, assignments and lab work of **Second Year Engineering (Information Technology Branch)** at **KJ Somaiya College of Engineering**.  
 
