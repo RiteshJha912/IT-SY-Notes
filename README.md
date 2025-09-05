@@ -21,7 +21,7 @@ The repository is organized semester-wise for clarity:
 📂 Notes-2nd-Year/
 │
 ├── 📁 Semester-3/
-│   ├── 📁 Assignments-and-IA/
+│   ├── Assignments-and-IA/
 │   │   ├── DAM/
 │   │   ├── DCN/
 │   │   ├── DiS/
@@ -30,7 +30,7 @@ The repository is organized semester-wise for clarity:
 │   │   ├── Honors-Cyber/
 │   │   └── OOPS-Java/
 │   │
-│   ├── 📁 Exam-Notes/
+│   ├── Exam-Notes/
 │   │   ├── DAM-Discrete-Applied-Maths/
 │   │   ├── DMS-Database-Management/
 │   │   ├── DCN-Data-Comm-Networks/
@@ -39,13 +39,13 @@ The repository is organized semester-wise for clarity:
 │   │   ├── DS-Data-Structures/
 │   │   └── IKS-Indian-Knowledge-System/
 │   │
-│   └── 📁 Question-Papers/
+│   └── Question-Papers/
 │       ├── ISE/
 │       ├── ESE-2023/
 │       └── ESE-2024/
 │
 ├── 📁 Semester-4/
-│   ├── 📁 Assignments-and-IA/
+│   ├── Assignments-and-IA/
 │   │   ├── AA/
 │   │   ├── AD/
 │   │   ├── CPL/
@@ -54,13 +54,13 @@ The repository is organized semester-wise for clarity:
 │   │   ├── PSOT/
 │   │   └── WPL/
 │   │
-│   ├── 📁 Exam-Notes/
+│   ├── Exam-Notes/
 │   │   ├── PSOT-Prob-Stats-Opt-Techniques/
 │   │   ├── ITC-Information-Theory-Coding/
 │   │   ├── AA-Analysis-of-Algorithms/
 │   │   └── AD-Advanced-Databases/
 │   │
-│   └── 📁 Question-Papers/
+│   └── Question-Papers/
 │       ├── ISE/
 │       ├── ESE-2022/
 │       └── ESE-2024/
